@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>6 Downloadable Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .image-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            width: 280px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>6 Downloadable Images</h1>
+    
+    <div class="image-container">
+        <!-- Image 1 -->
+        <div class="image-box">
+            <img src="./pictures/1yrs.jpeg" alt="Sample Image 1">
+            <button onclick="downloadImage('img1', 'image1.jpg')">Download Image 1</button>
+        </div>
+        
+        <!-- Image 2 -->
+        <div class="image-box">
+            <img src="./pictures/abh1.jpeg" alt="Sample Image 2">
+            <button onclick="downloadImage('img2', 'image2.jpg')">Download Image 2</button>
+        </div>
+        
+        <!-- Image 3 -->
+        <div class="image-box">
+            <img src="./pictures/abhi 2.jpeg" alt="Sample Image 3">
+            <button onclick="downloadImage('img3', 'image3.jpg')">Download Image 3</button>
+        </div>
+        
+        <!-- Image 4 -->
+        <div class="image-box">
+            <img src="./pictures/abhi 3.jpeg" alt="Sample Image 4">
+            <button onclick="downloadImage('img4', 'image4.jpg')">Download Image 4</button>
+        </div>
+        
+        <!-- Image 5 -->
+        <div class="image-box">
+            <img src="./pictures/abhi 4.jpeg" alt="Sample Image 5">
+            <button onclick="downloadImage('img5', 'image5.jpg')">Download Image 5</button>
+        </div>
+        
+        <!-- Image 6 -->
+        <div class="image-box">
+            <img src="./pictures/together.jpeg" alt="Sample Image 6">
+            <button onclick="downloadImage('img6', 'image6.jpg')">Download Image 6</button>
+        </div>
+
+       <!-- Image 7 -->
+        <div class="image-box">
+            <img src="./pictures/1.jpeg" alt="Sample Image 7">
+            <button onclick="downloadImage('img7', 'image7.jpg')">Download Image 7</button>
+
+        <!-- Image 8 -->
+        <div class="image-box">
+            <img src="./pictures/2.jpeg" alt="Sample Image 8">
+            <button onclick="downloadImage('img8', 'image8.jpg')">Download Image 8</button>
+        </div>
+
+         <!-- Image 9 -->
+        <div class="image-box">
+            <img src="./pictures/3.jpeg" alt="Sample Image 9">
+            <button onclick="downloadImage('img9', 'image9.jpg')">Download Image 9</button>
+        </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function downloadImage(imgId, fileName) {
+            const imgElement = document.querySelector(`.image-box:nth-child(${imgId.replace('img', '')}) img`);
+            const link = document.createElement('a');
+            link.download = fileName;
+            link.href = imgElement.src;
+            link.click();
+        }
+    </script>
+</body>
+</html>
